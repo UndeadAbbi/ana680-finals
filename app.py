@@ -4,12 +4,12 @@ import joblib
 import pandas as pd
 
 app = Flask(__name__)
-model = joblib.load('model/model.pkl')
+model = joblib.load('model/mushroom_classifier.pkl')
 
 @app.route('/', methods=['GET'])
 def home():
-    print(os.curdir)
-    return render_template('./templates/index.html')
+    app.logger.info(os.getcwd())
+    return render_template('index.html')
 
 @app.route('/predict', methods=['POST'])
 def predict():
