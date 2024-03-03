@@ -4,8 +4,8 @@ from sklearn.metrics import accuracy_score
 import joblib
 
 def load_data():
-    X_train = pd.read_csv('../datasets/X_train.csv')
-    y_train = pd.read_csv('../datasets/y_train.csv', squeeze=True)
+    X_train = pd.read_csv('datasets/X_train.csv')
+    y_train = pd.read_csv('datasets/y_train.csv', squeeze=True)
     return X_train, y_train
 
 def train_model(X_train, y_train):
@@ -13,7 +13,7 @@ def train_model(X_train, y_train):
     model.fit(X_train, y_train)
     return model
 
-def save_model(model, filename='../model/model.pkl'):
+def save_model(model, filename='model/model.pkl'):
     joblib.dump(model, filename)
 
 if __name__ == "__main__":
