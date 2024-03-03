@@ -3,7 +3,7 @@ import joblib
 import pandas as pd
 
 app = Flask(__name__)
-model = joblib.load('../model/model.pkl')
+model = joblib.load('model/model.pkl')
 
 @app.route('/', methods=['GET'])
 def home():
