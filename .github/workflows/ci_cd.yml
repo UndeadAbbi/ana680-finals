@@ -23,7 +23,6 @@ jobs:
     - name: Test
       run: |
         echo "Running tests placeholder"
-
     - name: Deploy to Heroku
       uses: akhileshns/heroku-deploy@v3.12.12
       with:
