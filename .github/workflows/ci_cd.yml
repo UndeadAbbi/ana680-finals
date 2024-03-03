@@ -1,0 +1,33 @@
+name: Python application
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: Set up Python 3.8
+      uses: actions/setup-python@v2
+      with:
+        python-version: 3.8
+    - name: Install dependencies
+      run: |
+        pip install -r app/requirements.txt
+    - name: Test with pytest
+      run: |
+        # Add commands to run your tests here
+        echo "Running tests placeholder"
+    - name: Deploy to Heroku
+      run: |
+        # Add your Heroku deployment commands here
+        echo "Deploying to Heroku placeholder"
+      env:
+        HEROKU_API_KEY: ${{secrets.HEROKU_API_KEY}}
+        HEROKU_APP_NAME: ${{secrets.HEROKU_APP_NAME}}

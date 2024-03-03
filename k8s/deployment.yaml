@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: mushroom-classification-deployment
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: mushroom-classification
+  template:
+    metadata:
+      labels:
+        app: mushroom-classification
+    spec:
+      containers:
+      - name: mushroom-classification
+        image: undeadabbi/mushroom-classification:latest
+        ports:
+        - containerPort: 5000
