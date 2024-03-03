@@ -1,3 +1,4 @@
+import os
 from flask import Flask, request, jsonify, render_template
 import joblib
 import pandas as pd
@@ -7,6 +8,7 @@ model = joblib.load('model/model.pkl')
 
 @app.route('/', methods=['GET'])
 def home():
+    print(os.curdir)
     return render_template('./templates/index.html')
 
 @app.route('/predict', methods=['POST'])
