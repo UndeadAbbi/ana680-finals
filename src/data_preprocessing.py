@@ -26,7 +26,9 @@ if __name__ == "__main__":
     X, y = preprocess_data(data)
     X_train, X_test, y_train, y_test = split_data(X, y)
     
+    pd.Series(y_train).to_csv('datasets/y_train.csv', index=False)
+    pd.Series(y_test).to_csv('datasets/y_test.csv', index=False)
+    
     X_train.to_csv('datasets/X_train.csv', index=False)
-    y_train.to_csv('datasets/y_train.csv', index=False)
     X_test.to_csv('datasets/X_test.csv', index=False)
-    y_test.to_csv('datasets/y_test.csv', index=False)
+
