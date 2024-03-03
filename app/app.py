@@ -7,7 +7,7 @@ model = joblib.load('model/model.pkl')
 
 @app.route('/', methods=['GET'])
 def home():
-    return render_template('../templates/index.html')
+    return render_template('./templates/index.html')
 
 @app.route('/predict', methods=['POST'])
 def predict():
