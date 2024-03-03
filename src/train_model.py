@@ -5,7 +5,8 @@ import joblib
 
 def load_data():
     X_train = pd.read_csv('datasets/X_train.csv')
-    y_train = pd.read_csv('datasets/y_train.csv', squeeze=True)
+    y_train_df = pd.read_csv('datasets/y_train.csv')
+    y_train = y_train_df.squeeze() if y_train_df.shape[1] == 1 else y_train_df
     return X_train, y_train
 
 def train_model(X_train, y_train):
@@ -20,3 +21,4 @@ if __name__ == "__main__":
     X_train, y_train = load_data()
     model = train_model(X_train, y_train)
     save_model(model)
+
