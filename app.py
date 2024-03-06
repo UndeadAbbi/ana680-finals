@@ -26,7 +26,8 @@ def predict():
     data = request.form.to_dict()
     data_preprocessed = preprocess_data(data)
     prediction = model.predict(data_preprocessed)
-    return jsonify({'prediction': str(prediction[0])})
+    result = "edible" if prediction[0] == 0 else "poisonous"
+    return jsonify({'prediction': result})
 
 if __name__ == '__main__':
     app.run(debug=True)
