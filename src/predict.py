@@ -2,7 +2,7 @@ import pandas as pd
 import joblib
 
 # Load the trained model
-def load_model(model_path='model/model.pkl'):
+def load_model(model_path='model/mushroom_classifier.pkl'):
     return joblib.load(model_path)
 
 def prepare_features(input_features):
