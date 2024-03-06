@@ -14,7 +14,7 @@ def train_model(X_train, y_train):
     model.fit(X_train, y_train)
     return model
 
-def save_model(model, filename='model/model.pkl'):
+def save_model(model, filename='mushroom_classifier.pkl'):
     joblib.dump(model, filename)
 
 if __name__ == "__main__":
